@@ -29,15 +29,15 @@ const alfabetoEgipcio = [
   { letra: 'Z', simbolo: '𓈖' }
 ];
 
-// Diccionario de interpretación a Emojis (incluye letras y la frase completa)
+// Diccionario de interpretación a Emojis
 const diccionario = {
-  // Frase completa: "¿Cómo se creó el universo?"
+  // Frase completa: "COMOSECREOELUNIVERSO" (sin espacios)
   "𓎡𓏲𓅓𓏲𓋴𓇋𓎡𓏏𓇋𓏲𓇋𓃩𓏲𓈎𓇌𓆑𓇋𓏏𓋴𓏲": {
     emojis: "❓ 🦅 ⛰️ ✨ 🌍 🌌",
     explicacion: "Pregunta (❓) + Dios Creador (🦅) + Colina Primordial (⛰️) + Cosmos (✨🌍🌌)"
   },
 
-  // Letras individuales
+  // Jeroglíficos individuales
   "𓄿": { emojis: "🦅", explicacion: "A - Buitre" },
   "𓎡": { emojis: "🦶", explicacion: "B/C/G/K - Pie / Cesta" },
   "𓂠": { emojis: "✋", explicacion: "D - Mano" },
@@ -96,31 +96,43 @@ function actualizarPantalla() {
 function traducirAEmojis() {
   if (seleccionados.length === 0) return;
 
-  const textoUnido = seleccionados.join("");
+  // Unimos todo el array sin espacios para buscar coincidencias exactas
+  const textoSinEspacios = seleccionados.join("");
   const resDiv = document.getElementById("resultado-emojis");
   const expDiv = document.getElementById("explicacion-traduccion");
 
-  // 1. Revisa si coincide exactamente con la frase del universo
-  if (diccionario[textoUnido]) {
-    resDiv.innerText = diccionario[textoUnido].emojis;
-    expDiv.innerText = diccionario[textoUnido].explicacion;
-  } else {
-    // 2. Si es otra combinación, traduce símbolo por símbolo
-    let emojisResultantes = [];
-    let explicaciones = [];
-
-    seleccionados.forEach(simbolo => {
-      if (diccionario[simbolo]) {
-        emojisResultantes.push(diccionario[simbolo].emojis);
-        explicaciones.push(diccionario[simbolo].explicacion);
-      } else {
-        emojisResultantes.push("❓");
-      }
-    });
-
-    resDiv.innerText = emojisResultantes.join(" ");
-    expDiv.innerText = explicaciones.join(" + ");
+  // 1. Comprobar si la frase completa existe en el diccionario
+  if (diccionario[textoSinEspacios]) {
+    resDiv.innerText = diccionario[textoSinEspacios].emojis;
+    expDiv.innerText = diccionario[textoSinEspacios].explicacion;
+    return;
   }
+
+  // 2. Si es un texto libre, traducir símbolo a símbolo
+  let emojisResultantes = [];
+  let explicaciones = [];
+
+  seleccionados.forEach(simbolo => {
+    // Si es un símbolo compuesto (como la Ñ o la X), buscar sus partes o el símbolo entero
+    if (diccionario[simbolo]) {
+      emojisResultantes.push(diccionario[simbolo].emojis);
+      explicaciones.push(diccionario[simbolo].explicacion);
+    } else {
+      // Si el símbolo tiene varias letras (ej: 𓈎𓇌), descomponer en caracteres individuales
+      let partes = Array.from(simbolo);
+      partes.forEach(subSimbolo => {
+        if (diccionario[subSimbolo]) {
+          emojisResultantes.push(diccionario[subSimbolo].emojis);
+          explicaciones.push(diccionario[subSimbolo].explicacion);
+        } else {
+          emojisResultantes.push("❓");
+        }
+      });
+    }
+  });
+
+  resDiv.innerText = emojisResultantes.join(" ");
+  expDiv.innerText = explicaciones.join(" + ");
 }
 
 window.addEventListener("DOMContentLoaded", cargarTeclado);
