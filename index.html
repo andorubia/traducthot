@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TraducThot</title>
+  <title>TraducThot - El traductor de los escribas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="contenedor">
-    <h1>Thot: El traductor de los escribas</h1>
-    
-    <p>Entrega tu mensaje:</p>
+    <div class="header-thot">
+      <span class="icono-thot">𓅝</span>
+      <h1>TraducThot</h1>
+      <p class="subtitulo">El traductor de los escribas</p>
+    </div>
+
+    <p class="instrucciones">Escribe un mensaje y deja que Thot lo convierta en jeroglíficos:</p>
 
     <div id="pantalla-jeroglifica" class="pantalla">...</div>
 
     <div class="acciones">
       <button onclick="borrarUltimo()" class="btn-borrar">⌫ Borrar papiro</button>
       <button onclick="limpiarTodo()" class="btn-limpiar">📜 Nuevo papiro</button>
-      <button onclick="traducirAEmojis()" class="btn-traducir" style="color: white;">✨ Consultar a Thot</button>
+      <button onclick="traducirAEmojis()" class="btn-traducir">✨ Consultar a Thot</button>
     </div>
 
     <div class="teclado-grid" id="teclado"></div>
 
     <div class="resultado-box">
-      <h3>Tu mensaje traducido:</h3>
+      <h3>📜 La interpretación de Thot:</h3>
       <div id="resultado-emojis">...</div>
       <p id="explicacion-traduccion" class="explicacion"></p>
     </div>
