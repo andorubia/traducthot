@@ -76,17 +76,17 @@ button:active {
 }
 
 .btn-borrar { 
-  background: #e74c3c; 
+  background: #c16514; 
   color: white; 
 }
 
 .btn-limpiar { 
-  background: #7f8c8d; 
+  background: #35515a; 
   color: white; 
 }
 
 .btn-traducir { 
-  background: #d4af37; 
+  background: #e19b21; 
   color: #ffffff; /* Texto del botón Traducir en blanco */
   font-size: 1.1rem; 
 }
