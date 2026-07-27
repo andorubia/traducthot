@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TraduThot</title>
+  <title>TraducThot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="contenedor">
-    <h1>𓋹 TraduThot 𓋹</h1>
-    <p>Haz clic en los jeroglíficos para componer tu mensaje:</p>
+    <h1>TraducThot</h1>
+    <p>Escribe tu mensaje:</p>
 
     <div id="pantalla-jeroglifica" class="pantalla">...</div>
 
     <div class="acciones">
       <button onclick="borrarUltimo()" class="btn-borrar">⌫ Borrar</button>
       <button onclick="limpiarTodo()" class="btn-limpiar">🗑️ Limpiar</button>
-      <button onclick="traducirAEmojis()" class="btn-traducir">✨ Traducir a Emojis</button>
+      <button onclick="traducirAEmojis()" class="btn-traducir">🗣️ Traducir</button>
     </div>
 
     <div class="teclado-grid" id="teclado"></div>
 
     <div class="resultado-box">
-      <h3>Traducción en Emojis:</h3>
+      <h3>Tu mensaje traducido:</h3>
       <div id="resultado-emojis">...</div>
       <p id="explicacion-traduccion" class="explicacion"></p>
     </div>
