@@ -3,18 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escriba Egipcio en Tiempo Real</title>
+  <title>TraduThot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="contenedor">
-    <h1>𓋹 Escriba Egipcio En Vivo 𓋹</h1>
-    <p>Escribe en español y mira la conversión en tiempo real:</p>
+    <h1>𓋹 TraduThot 𓋹</h1>
+    <p>Haz clic en los jeroglíficos para componer tu mensaje:</p>
 
-    <input type="text" id="editor" placeholder="Escribe tu texto o nombre..." oninput="convertirEnVivo()">
+    <div id="pantalla-jeroglifica" class="pantalla"></div>
 
-    <div class="output-box" id="resultado">𓀀</div>
+    <div class="acciones">
+      <button onclick="borrarUltimo()" class="btn-borrar">⌫ Borrar</button>
+      <button onclick="limpiarTodo()" class="btn-limpiar">🗑️ Limpiar</button>
+      <button onclick="traducirAEmojis()" class="btn-traducir">✨ Traducir a Emojis</button>
+    </div>
+
+    <div class="teclado-grid" id="teclado">
+      </div>
+
+    <div class="resultado-box">
+      <h3>Traducción en Emojis:</h3>
+      <div id="resultado-emojis">...</div>
+      <p id="explicacion-traduccion" class="explicacion"></p>
+    </div>
   </div>
 
   <script src="app.js"></script>
