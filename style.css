@@ -1,12 +1,15 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-  /* Imagen de fondo de papiro */
-  background-image: url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=1920&q=80');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  /* Nombre de tu archivo PNG subido a GitHub */
+  background-image: url('papiro.png'); 
+  background-size: cover;          /* Hace que la imagen cubra toda la pantalla */
+  background-position: center;     /* La centra */
+  background-attachment: fixed;    /* La deja fija al hacer scroll */
+  background-repeat: no-repeat;    /* Evita que se repita como mosaico */
+  
+  /* Color de fondo por si el PNG tiene partes transparentes */
+  background-color: #f4ebd0; 
   
   color: #3d2314;
   text-align: center;
