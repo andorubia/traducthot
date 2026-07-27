@@ -1,14 +1,17 @@
+/* ==========================================
+   ESTILOS GENERALES Y FONDO DE PAPIRO
+   ========================================== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-  /* Nombre de tu archivo PNG subido a GitHub */
+  /* Nombre exacto de la imagen que subiste a GitHub */
   background-image: url('papiro.png'); 
-  background-size: cover;          /* Hace que la imagen cubra toda la pantalla */
-  background-position: center;     /* La centra */
-  background-attachment: fixed;    /* La deja fija al hacer scroll */
+  background-size: cover;          /* La imagen cubre toda la pantalla */
+  background-position: center;     /* Queda centrada */
+  background-attachment: fixed;    /* Se mantiene fija al hacer scroll */
   background-repeat: no-repeat;    /* Evita que se repita como mosaico */
   
-  /* Color de fondo por si el PNG tiene partes transparentes */
+  /* Color de respaldo por si la imagen tarda en cargar */
   background-color: #f4ebd0; 
   
   color: #3d2314;
@@ -17,6 +20,9 @@ body {
   margin: 0;
 }
 
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+   ========================================== */
 .contenedor {
   max-width: 700px;
   margin: 0 auto;
@@ -28,6 +34,9 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* ==========================================
+   PANTALLA DE JEROGLÍFICOS
+   ========================================== */
 .pantalla {
   min-height: 70px;
   background: #ffffff;
@@ -42,6 +51,9 @@ body {
   justify-content: center;
 }
 
+/* ==========================================
+   BOTONES DE ACCIÓN (BORRAR, LIMPIAR, TRADUCIR)
+   ========================================== */
 .acciones {
   display: flex;
   gap: 10px;
@@ -79,6 +91,9 @@ button:active {
   font-size: 1.1rem; 
 }
 
+/* ==========================================
+   TECLADO DE JEROGLÍFICOS
+   ========================================== */
 .teclado-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
@@ -101,6 +116,9 @@ button:active {
   background: #fdf2d0;
 }
 
+/* ==========================================
+   RECUADRO DE TRADUCCIÓN A EMOJIS
+   ========================================== */
 .resultado-box {
   background: #ffffff;
   border: 2px dashed #b8860b;
