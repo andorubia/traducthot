@@ -1,4 +1,3 @@
-// Alfabeto completo (A-Z + Ñ)
 const alfabetoEgipcio = [
   { letra: 'A', simbolo: '𓄿', emoji: '🦅', explicacion: 'A - Buitre' },
   { letra: 'B', simbolo: '𓎡', emoji: '🦶', explicacion: 'B - Pie' },
@@ -39,7 +38,7 @@ function cargarTeclado() {
   alfabetoEgipcio.forEach(item => {
     const btn = document.createElement("button");
     btn.className = "tecla";
-    btn.innerHTML = `<small style="font-size: 0.75rem; display:block; color: #8b5a2b;">${item.letra}</small>${item.simbolo}`;
+    btn.innerHTML = `<small style="font-size: 0.7rem; display:block; color: #8b5a2b; font-weight: bold;">${item.letra}</small>${item.simbolo}`;
     btn.onclick = function() {
       seleccionados.push(item);
       actualizarPantalla();
@@ -73,17 +72,21 @@ function traducirAEmojis() {
   const resDiv = document.getElementById("resultado-emojis");
   const expDiv = document.getElementById("explicacion-traduccion");
 
-  // Formamos la cadena de letras en mayúsculas
+  // Efecto de animación mística al consultar a Thot
+  resDiv.classList.remove("animacion-revelar");
+  void resDiv.offsetWidth; // Reinicia el ciclo de animación CSS
+  resDiv.classList.add("animacion-revelar");
+
   const textoEscrito = seleccionados.map(item => item.letra).join("");
 
-  // Detección especial para la pregunta sobre el universo
+  // Detección especial para la pregunta del universo
   if (textoEscrito === "COMOSECREOELUNIVERSO") {
     resDiv.innerText = "❓ 🦅 ⛰️ ✨ 🌍 🌌";
     expDiv.innerText = "Pregunta (❓) + Dios Creador (🦅) + Colina Primordial (⛰️) + Cosmos (✨🌍🌌)";
     return;
   }
 
-  // Traducción por defecto de cada letra/símbolo
+  // Traducción por defecto de cada letra
   const emojisResultantes = seleccionados.map(item => item.emoji).join(" ");
   const explicaciones = seleccionados.map(item => item.explicacion).join(" + ");
 
