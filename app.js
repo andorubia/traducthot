@@ -1,31 +1,22 @@
-const alfabetoEgipcio = [
-  { letra: 'A', simbolo: '𓄿', emoji: '🦅' },
-  { letra: 'B', simbolo: '𓎡', emoji: '🦶' },
-  { letra: 'C', simbolo: '𓎡', emoji: '🧺' },
-  { letra: 'D', simbolo: '𓂠', emoji: '✋' },
-  { letra: 'E', simbolo: '𓇋', emoji: '🌿' },
-  { letra: 'F', simbolo: '𓆑', emoji: '🐍' },
-  { letra: 'G', simbolo: '𓎡', emoji: '🏺' },
-  { letra: 'H', simbolo: '𓉔', emoji: '🏠' },
-  { letra: 'I', simbolo: '𓇌', emoji: '🌱' },
-  { letra: 'J', simbolo: '𓆓', emoji: '🐉' },
-  { letra: 'K', simbolo: '𓎡', emoji: '🧺' },
-  { letra: 'L', simbolo: '𓃩', emoji: '🦁' },
-  { letra: 'M', simbolo: '𓅓', emoji: '🦉' },
-  { letra: 'N', simbolo: '𓈎', emoji: '🌊' },
-  { letra: 'Ñ', simbolo: '𓈎𓇌', emoji: '🌊🌱' },
-  { letra: 'O', simbolo: '𓏲', emoji: '🪢' },
-  { letra: 'P', simbolo: '𓊪', emoji: '🧘' },
-  { letra: 'Q', simbolo: '𓎛', emoji: '⛰️' },
-  { letra: 'R', simbolo: '𓏏', emoji: '👄' },
-  { letra: 'S', simbolo: '𓋴', emoji: '🧵' },
-  { letra: 'T', simbolo: '𓏏', emoji: '🍞' },
-  { letra: 'U', simbolo: '𓏲', emoji: '🐤' },
-  { letra: 'V', simbolo: '𓆑', emoji: '🐍' },
-  { letra: 'W', simbolo: '𓏲', emoji: '🪢' },
-  { letra: 'X', simbolo: '𓎡𓋴', emoji: '🧺🧵' },
-  { letra: 'Y', simbolo: '𓇌', emoji: '🌱' },
-  { letra: 'Z', simbolo: '𓈖', emoji: '🔒' }
+// Lista de jeroglíficos únicos (sin repetidos)
+const jeroglificosUnicos = [
+  { simbolo: '𓄿', emoji: '🦅' }, // A
+  { simbolo: '𓎡', emoji: '🧺' }, // B / C / G / K
+  { simbolo: '𓂠', emoji: '✋' }, // D
+  { simbolo: '𓇋', emoji: '🌿' }, // E
+  { simbolo: '𓆑', emoji: '🐍' }, // F / V
+  { simbolo: '𓉔', emoji: '🏠' }, // H
+  { simbolo: '𓇌', emoji: '🌱' }, // I / Y
+  { simbolo: '𓆓', emoji: '🐉' }, // J
+  { simbolo: '𓃩', emoji: '🦁' }, // L
+  { simbolo: '𓅓', emoji: '🦉' }, // M
+  { simbolo: '𓈎', emoji: '🌊' }, // N
+  { simbolo: '𓏲', emoji: '🪢' }, // O / U / W
+  { simbolo: '𓊪', emoji: '🧘' }, // P
+  { simbolo: '𓎛', emoji: '⛰️' }, // Q
+  { simbolo: '𓏏', emoji: '👄' }, // R / T
+  { simbolo: '𓋴', emoji: '🧵' }, // S
+  { simbolo: '𓈖', emoji: '🔒' }  // Z
 ];
 
 let seleccionados = [];
@@ -35,10 +26,9 @@ function cargarTeclado() {
   if (!contenedor) return;
   
   contenedor.innerHTML = "";
-  alfabetoEgipcio.forEach(item => {
+  jeroglificosUnicos.forEach(item => {
     const btn = document.createElement("button");
     btn.className = "tecla";
-    // Muestra únicamente el símbolo jeroglífico en la tecla
     btn.innerHTML = `${item.simbolo}`;
     btn.onclick = function() {
       seleccionados.push(item);
@@ -73,25 +63,25 @@ function traducirAEmojis() {
   const resDiv = document.getElementById("resultado-emojis");
   const expDiv = document.getElementById("explicacion-traduccion");
 
-  // Efecto de animación mística al consultar a Thot
+  // Efecto visual de revelación mística
   resDiv.classList.remove("animacion-revelar");
   void resDiv.offsetWidth;
   resDiv.classList.add("animacion-revelar");
 
-  const textoEscrito = seleccionados.map(item => item.letra).join("");
+  // Secuencia jeroglífica exacta de "COMOSECREOELUNIVERSO"
+  const secuenciaSimbolos = seleccionados.map(item => item.simbolo).join("");
+  const secretoUniverso = "𓎡𓏲𓅓𓏲𓋴𓇋𓎡𓏏𓇋𓏲𓇋𓃩𓏲𓈎𓇌𓆑𓇋𓏏𓋴𓏲";
 
-  // Detección especial para la pregunta del universo (solo emojis)
-  if (textoEscrito === "COMOSECREOELUNIVERSO") {
+  if (secuenciaSimbolos === secretoUniverso) {
     resDiv.innerText = "❓ 🦅 ⛰️ ✨ 🌍 🌌";
     expDiv.innerText = "";
     return;
   }
 
-  // Muestra únicamente los emojis resultantes
+  // Traducción a emojis
   const emojisResultantes = seleccionados.map(item => item.emoji).join(" ");
-
   resDiv.innerText = emojisResultantes;
-  expDiv.innerText = ""; // Mantiene la explicación vacía
+  expDiv.innerText = "";
 }
 
 window.addEventListener("DOMContentLoaded", cargarTeclado);
