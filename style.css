@@ -1,34 +1,47 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4ebd0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Imagen de fondo de papiro */
+  background-image: url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  
   color: #3d2314;
   text-align: center;
   padding: 20px;
+  margin: 0;
 }
 
 .contenedor {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  background: #fff8e7;
-  padding: 20px;
-  border-radius: 12px;
-  border: 2px solid #b8860b;
+  /* Fondo estilo pergamino apergaminado semi-transparente */
+  background: rgba(255, 248, 231, 0.93);
+  padding: 25px;
+  border-radius: 15px;
+  border: 3px solid #b8860b;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .pantalla {
-  min-height: 60px;
+  min-height: 70px;
   background: #ffffff;
   border: 2px solid #c8a268;
-  border-radius: 8px;
-  font-size: 2.5rem;
-  padding: 10px;
+  border-radius: 10px;
+  font-size: 2.2rem;
+  padding: 15px;
   margin-bottom: 15px;
   word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .acciones {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
   margin-bottom: 20px;
 }
@@ -36,47 +49,68 @@ body {
 button {
   cursor: pointer;
   border: none;
-  border-radius: 6px;
-  padding: 10px 14px;
+  border-radius: 8px;
+  padding: 10px 18px;
   font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.1s;
 }
 
-.btn-borrar { background: #e74c3c; color: white; }
-.btn-limpiar { background: #7f8c8d; color: white; }
-.btn-traducir { background: #d4af37; color: #3d2314; }
+button:active {
+  transform: scale(0.95);
+}
+
+.btn-borrar { 
+  background: #e74c3c; 
+  color: white; 
+}
+
+.btn-limpiar { 
+  background: #7f8c8d; 
+  color: white; 
+}
+
+.btn-traducir { 
+  background: #d4af37; 
+  color: #ffffff; /* Texto del botón Traducir en blanco */
+  font-size: 1.1rem; 
+}
 
 .teclado-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
   gap: 8px;
-  justify-content: center;
-  background: #eae0d0;
+  background: rgba(234, 224, 208, 0.8);
   padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
 }
 
 .tecla {
   background: #ffffff;
   border: 1px solid #b8860b;
-  font-size: 1.8rem;
-  padding: 8px 12px;
-  border-radius: 6px;
+  font-size: 1.5rem;
+  padding: 6px 0;
+  border-radius: 8px;
+}
+
+.tecla:hover {
+  background: #fdf2d0;
 }
 
 .resultado-box {
   background: #ffffff;
   border: 2px dashed #b8860b;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 15px;
 }
 
 #resultado-emojis {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin: 10px 0;
 }
 
 .explicacion {
   font-style: italic;
-  color: #555;
+  color: #666;
 }
