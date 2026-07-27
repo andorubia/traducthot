@@ -10,20 +10,22 @@
 
   <div class="contenedor">
     <h1>TraducThot</h1>
-    <p>Escribe tu mensaje:</p>
+    <p class="subtitulo">El traductor de los escribas</p>
+    
+    <p>Entrega tu mensaje a Thot:</p>
 
     <div id="pantalla-jeroglifica" class="pantalla">...</div>
 
     <div class="acciones">
-      <button onclick="borrarUltimo()" class="btn-borrar">⌫ Borrar</button>
-      <button onclick="limpiarTodo()" class="btn-limpiar">🗑️ Limpiar</button>
-      <button onclick="traducirAEmojis()" class="btn-traducir" style="color: white;">Traducir</button>
+      <button onclick="borrarUltimo()" class="btn-borrar">⌫ Borrar papiro</button>
+      <button onclick="limpiarTodo()" class="btn-limpiar">📜 Nuevo papiro</button>
+      <button onclick="traducirAEmojis()" class="btn-traducir" style="color: white;">✨ Consultar a Thot</button>
     </div>
 
     <div class="teclado-grid" id="teclado"></div>
 
     <div class="resultado-box">
-      <h3>Tu mensaje traducido:</h3>
+      <h3>La traducción de Thot:</h3>
       <div id="resultado-emojis">...</div>
       <p id="explicacion-traduccion" class="explicacion"></p>
     </div>
