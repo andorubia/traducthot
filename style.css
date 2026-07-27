@@ -1,5 +1,5 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #f4ebd0;
   color: #3d2314;
   text-align: center;
@@ -7,32 +7,28 @@ body {
 }
 
 .contenedor {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   background: #fff8e7;
-  padding: 25px;
-  border-radius: 15px;
-  border: 3px solid #b8860b;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #b8860b;
 }
 
 .pantalla {
-  min-height: 80px;
+  min-height: 60px;
   background: #ffffff;
   border: 2px solid #c8a268;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 2.5rem;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 15px;
   word-break: break-all;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .acciones {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
   margin-bottom: 20px;
 }
@@ -40,56 +36,47 @@ body {
 button {
   cursor: pointer;
   border: none;
-  border-radius: 8px;
-  padding: 10px 18px;
+  border-radius: 6px;
+  padding: 10px 14px;
   font-weight: bold;
-  font-size: 1rem;
-  transition: transform 0.1s, background 0.2s;
-}
-
-button:active {
-  transform: scale(0.95);
 }
 
 .btn-borrar { background: #e74c3c; color: white; }
 .btn-limpiar { background: #7f8c8d; color: white; }
-.btn-traducir { background: #d4af37; color: #3d2314; font-size: 1.1rem; }
+.btn-traducir { background: #d4af37; color: #3d2314; }
 
 .teclado-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
   background: #eae0d0;
   padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .tecla {
   background: #ffffff;
   border: 1px solid #b8860b;
   font-size: 1.8rem;
-  padding: 10px 0;
-  border-radius: 8px;
-}
-
-.tecla:hover {
-  background: #fdf2d0;
+  padding: 8px 12px;
+  border-radius: 6px;
 }
 
 .resultado-box {
   background: #ffffff;
   border: 2px dashed #b8860b;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 15px;
 }
 
 #resultado-emojis {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin: 10px 0;
 }
 
 .explicacion {
   font-style: italic;
-  color: #666;
+  color: #555;
 }
