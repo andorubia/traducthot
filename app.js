@@ -1,61 +1,33 @@
 // Alfabeto completo (A-Z + Ñ)
 const alfabetoEgipcio = [
-  { letra: 'A', simbolo: '𓄿' },
-  { letra: 'B', simbolo: '𓎡' },
-  { letra: 'C', simbolo: '𓎡' },
-  { letra: 'D', simbolo: '𓂠' },
-  { letra: 'E', simbolo: '𓇋' },
-  { letra: 'F', simbolo: '𓆑' },
-  { letra: 'G', simbolo: '𓎡' },
-  { letra: 'H', simbolo: '𓉔' },
-  { letra: 'I', simbolo: '𓇌' },
-  { letra: 'J', simbolo: '𓆓' },
-  { letra: 'K', simbolo: '𓎡' },
-  { letra: 'L', simbolo: '𓃩' },
-  { letra: 'M', simbolo: '𓅓' },
-  { letra: 'N', simbolo: '𓈎' },
-  { letra: 'Ñ', simbolo: '𓈎𓇌' },
-  { letra: 'O', simbolo: '𓏲' },
-  { letra: 'P', simbolo: '𓊪' },
-  { letra: 'Q', simbolo: '𓎛' },
-  { letra: 'R', simbolo: '𓏏' },
-  { letra: 'S', simbolo: '𓋴' },
-  { letra: 'T', simbolo: '𓏏' },
-  { letra: 'U', simbolo: '𓏲' },
-  { letra: 'V', simbolo: '𓆑' },
-  { letra: 'W', simbolo: '𓏲' },
-  { letra: 'X', simbolo: '𓎡𓋴' },
-  { letra: 'Y', simbolo: '𓇌' },
-  { letra: 'Z', simbolo: '𓈖' }
+  { letra: 'A', simbolo: '𓄿', emoji: '🦅', explicacion: 'A - Buitre' },
+  { letra: 'B', simbolo: '𓎡', emoji: '🦶', explicacion: 'B - Pie' },
+  { letra: 'C', simbolo: '𓎡', emoji: '🧺', explicacion: 'C - Cesta' },
+  { letra: 'D', simbolo: '𓂠', emoji: '✋', explicacion: 'D - Mano' },
+  { letra: 'E', simbolo: '𓇋', emoji: '🌿', explicacion: 'E - Junco' },
+  { letra: 'F', simbolo: '𓆑', emoji: '🐍', explicacion: 'F - Víbora' },
+  { letra: 'G', simbolo: '𓎡', emoji: '🏺', explicacion: 'G - Jarra' },
+  { letra: 'H', simbolo: '𓉔', emoji: '🏠', explicacion: 'H - Choza' },
+  { letra: 'I', simbolo: '𓇌', emoji: '🌱', explicacion: 'I - Juncos' },
+  { letra: 'J', simbolo: '𓆓', emoji: '🐉', explicacion: 'J - Cobra' },
+  { letra: 'K', simbolo: '𓎡', emoji: '🧺', explicacion: 'K - Cesta' },
+  { letra: 'L', simbolo: '𓃩', emoji: '🦁', explicacion: 'L - León' },
+  { letra: 'M', simbolo: '𓅓', emoji: '🦉', explicacion: 'M - Búho' },
+  { letra: 'N', simbolo: '𓈎', emoji: '🌊', explicacion: 'N - Agua' },
+  { letra: 'Ñ', simbolo: '𓈎𓇌', emoji: '🌊🌱', explicacion: 'Ñ - Agua y Junco' },
+  { letra: 'O', simbolo: '𓏲', emoji: '🪢', explicacion: 'O - Cuerda' },
+  { letra: 'P', simbolo: '𓊪', emoji: '🧘', explicacion: 'P - Estera' },
+  { letra: 'Q', simbolo: '𓎛', emoji: '⛰️', explicacion: 'Q - Montaña' },
+  { letra: 'R', simbolo: '𓏏', emoji: '👄', explicacion: 'R - Boca' },
+  { letra: 'S', simbolo: '𓋴', emoji: '🧵', explicacion: 'S - Tela' },
+  { letra: 'T', simbolo: '𓏏', emoji: '🍞', explicacion: 'T - Pan' },
+  { letra: 'U', simbolo: '𓏲', emoji: '🐤', explicacion: 'U - Codorniz' },
+  { letra: 'V', simbolo: '𓆑', emoji: '🐍', explicacion: 'V - Víbora' },
+  { letra: 'W', simbolo: '𓏲', emoji: '🪢', explicacion: 'W - Cuerda' },
+  { letra: 'X', simbolo: '𓎡𓋴', emoji: '🧺🧵', explicacion: 'X - Cesta y Tela' },
+  { letra: 'Y', simbolo: '𓇌', emoji: '🌱', explicacion: 'Y - Juncos' },
+  { letra: 'Z', simbolo: '𓈖', emoji: '🔒', explicacion: 'Z - Cerrojo' }
 ];
-
-// Diccionario de interpretación a Emojis
-const diccionario = {
-  // Frase completa: "COMOSECREOELUNIVERSO" (sin espacios)
-  "𓎡𓏲𓅓𓏲𓋴𓇋𓎡𓏏𓇋𓏲𓇋𓃩𓏲𓈎𓇌𓆑𓇋𓏏𓋴𓏲": {
-    emojis: "❓ 🦅 ⛰️ ✨ 🌍 🌌",
-    explicacion: "Pregunta (❓) + Dios Creador (🦅) + Colina Primordial (⛰️) + Cosmos (✨🌍🌌)"
-  },
-
-  // Jeroglíficos individuales
-  "𓄿": { emojis: "🦅", explicacion: "A - Buitre" },
-  "𓎡": { emojis: "🦶", explicacion: "B/C/G/K - Pie / Cesta" },
-  "𓂠": { emojis: "✋", explicacion: "D - Mano" },
-  "𓇋": { emojis: "🌿", explicacion: "E - Junco" },
-  "𓆑": { emojis: "🐍", explicacion: "F/V - Víbora" },
-  "𓉔": { emojis: "🏠", explicacion: "H - Choza" },
-  "𓇌": { emojis: "🌱", explicacion: "I/Y - Juncos" },
-  "𓆓": { emojis: "🐉", explicacion: "J - Cobra" },
-  "𓃩": { emojis: "🦁", explicacion: "L - León" },
-  "𓅓": { emojis: "🦉", explicacion: "M - Búho" },
-  "𓈎": { emojis: "🌊", explicacion: "N - Agua" },
-  "𓏲": { emojis: "🪢", explicacion: "O/U/W - Cuerda" },
-  "𓊪": { emojis: "🧘", explicacion: "P - Estera" },
-  "𓎛": { emojis: "⛰️", explicacion: "Q - Montaña" },
-  "𓏏": { emojis: "👄", explicacion: "R/T - Boca / Pan" },
-  "𓋴": { emojis: "🧵", explicacion: "S - Tela" },
-  "𓈖": { emojis: "🔒", explicacion: "Z - Cerrojo" }
-};
 
 let seleccionados = [];
 
@@ -69,7 +41,7 @@ function cargarTeclado() {
     btn.className = "tecla";
     btn.innerHTML = `<small style="font-size: 0.75rem; display:block; color: #8b5a2b;">${item.letra}</small>${item.simbolo}`;
     btn.onclick = function() {
-      seleccionados.push(item.simbolo);
+      seleccionados.push(item);
       actualizarPantalla();
     };
     contenedor.appendChild(btn);
@@ -90,49 +62,33 @@ function limpiarTodo() {
 
 function actualizarPantalla() {
   const pantalla = document.getElementById("pantalla-jeroglifica");
-  pantalla.innerText = seleccionados.length > 0 ? seleccionados.join(" ") : "...";
+  pantalla.innerText = seleccionados.length > 0 
+    ? seleccionados.map(item => item.simbolo).join(" ") 
+    : "...";
 }
 
 function traducirAEmojis() {
   if (seleccionados.length === 0) return;
 
-  // Unimos todo el array sin espacios para buscar coincidencias exactas
-  const textoSinEspacios = seleccionados.join("");
   const resDiv = document.getElementById("resultado-emojis");
   const expDiv = document.getElementById("explicacion-traduccion");
 
-  // 1. Comprobar si la frase completa existe en el diccionario
-  if (diccionario[textoSinEspacios]) {
-    resDiv.innerText = diccionario[textoSinEspacios].emojis;
-    expDiv.innerText = diccionario[textoSinEspacios].explicacion;
+  // Formamos la cadena de letras en mayúsculas
+  const textoEscrito = seleccionados.map(item => item.letra).join("");
+
+  // Detección especial para la pregunta sobre el universo
+  if (textoEscrito === "COMOSECREOELUNIVERSO") {
+    resDiv.innerText = "❓ 🦅 ⛰️ ✨ 🌍 🌌";
+    expDiv.innerText = "Pregunta (❓) + Dios Creador (🦅) + Colina Primordial (⛰️) + Cosmos (✨🌍🌌)";
     return;
   }
 
-  // 2. Si es un texto libre, traducir símbolo a símbolo
-  let emojisResultantes = [];
-  let explicaciones = [];
+  // Traducción por defecto de cada letra/símbolo
+  const emojisResultantes = seleccionados.map(item => item.emoji).join(" ");
+  const explicaciones = seleccionados.map(item => item.explicacion).join(" + ");
 
-  seleccionados.forEach(simbolo => {
-    // Si es un símbolo compuesto (como la Ñ o la X), buscar sus partes o el símbolo entero
-    if (diccionario[simbolo]) {
-      emojisResultantes.push(diccionario[simbolo].emojis);
-      explicaciones.push(diccionario[simbolo].explicacion);
-    } else {
-      // Si el símbolo tiene varias letras (ej: 𓈎𓇌), descomponer en caracteres individuales
-      let partes = Array.from(simbolo);
-      partes.forEach(subSimbolo => {
-        if (diccionario[subSimbolo]) {
-          emojisResultantes.push(diccionario[subSimbolo].emojis);
-          explicaciones.push(diccionario[subSimbolo].explicacion);
-        } else {
-          emojisResultantes.push("❓");
-        }
-      });
-    }
-  });
-
-  resDiv.innerText = emojisResultantes.join(" ");
-  expDiv.innerText = explicaciones.join(" + ");
+  resDiv.innerText = emojisResultantes;
+  expDiv.innerText = explicaciones;
 }
 
 window.addEventListener("DOMContentLoaded", cargarTeclado);
