@@ -1,5 +1,5 @@
 /* ==========================================
-   ESTILOS GENERALES Y FONDO
+   ESTILOS GENERALES Y FONDO DE PAPIRO
    ========================================== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,8 +11,29 @@ body {
   background-color: #f4ebd0; 
   color: #3d2314;
   text-align: center;
-  padding: 30px 15px;
   margin: 0;
+
+  /* Centrado vertical con flexbox */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 15px;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL (DESPLAZADO SUTILMENTE)
+   ========================================== */
+.contenedor {
+  max-width: 720px;
+  width: 100%;
+  margin-bottom: 5vh; /* Ajuste fino: lo mantiene un pelín por encima del centro exacto */
+  background-color: #F8EED2;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1.5px solid #d4af37;
+  box-shadow: 0 10px 30px rgba(61, 35, 20, 0.15);
 }
 
 /* ==========================================
@@ -51,19 +72,6 @@ h1 {
   font-size: 1.05rem;
   color: #5a3d28;
   margin-bottom: 20px;
-}
-
-/* ==========================================
-   CONTENEDOR PRINCIPAL (ESTILO MANUSCRITO)
-   ========================================== */
-.contenedor {
-  max-width: 720px;
-  margin: 0 auto;
-  background-color: #F8EED2; /* Tono de papiro cálido sugerido */
-  padding: 30px;
-  border-radius: 12px;
-  border: 1.5px solid #d4af37; /* Borde dorado fino */
-  box-shadow: 0 10px 30px rgba(61, 35, 20, 0.15); /* Sombra suave y orguliosa */
 }
 
 /* ==========================================
@@ -141,20 +149,20 @@ button:active {
 }
 
 .tecla {
-  background: #FFFDF7; /* Fondo marfil */
-  border: 1px solid #d4af37; /* Borde dorado */
+  background: #FFFDF7;
+  border: 1px solid #d4af37;
   font-size: 1.5rem;
   padding: 8px 0;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Sombra ligera */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
   transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .tecla:hover {
-  transform: translateY(-3px); /* Se eleva 3px */
-  scale: 1.05; /* Aumenta ligeramente de tamaño */
+  transform: translateY(-3px);
+  scale: 1.05;
   background: #FFFFFF;
-  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4); /* Brillo dorado */
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
   border-color: #ffd700;
 }
 
